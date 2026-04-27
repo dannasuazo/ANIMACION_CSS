@@ -1,0 +1,166 @@
+body{
+    background:radial-gradient(rgb(103, 148, 255),rgb(45, 46, 143));
+    height:100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+:root{
+    --fondo:rgb(103, 148, 255);
+    --borde:white;
+    --f1:rgb(255, 255, 255);
+    --f2:rgb(37, 81, 52);
+    --f3:rgb(31, 31, 31);
+    --f4:rgb(250, 140, 57);
+    --f5:rgb(255, 122, 197);
+}
+.contenedor{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    perspective: 1000px;
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+.cartas{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.6s ease;
+    width: 200px;
+    height: 280px;
+    overflow: visible;
+}
+.card {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 280px;
+    background: var(--fondo);
+    border: 2px solid var(--borde);
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translateX(0) rotate(0deg) scale(1);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    flex-direction: column;
+    overflow: hidden;
+}
+img {
+    display: none;
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+
+.cartas:hover .c1 {
+    transform: translateX(-160px) rotate(-15deg) scale(0.8);
+    opacity: 0.6;
+}
+.cartas:hover .c2 {
+    transform: translateX(-90px) rotate(-8deg) scale(0.9);
+    opacity: 0.8;
+}
+.cartas:hover .c3 {
+    transform: translateX(0) rotate(0deg) scale(1);
+    opacity: 1;
+}
+.cartas:hover .c4 {
+    transform: translateX(90px) rotate(8deg) scale(0.9);
+    opacity: 0.8;
+}
+.cartas:hover .c5 {
+    transform: translateX(160px) rotate(15deg) scale(0.8);
+    opacity: 0.6;
+}
+
+
+.cartas:hover .card:hover img {
+    display: block;
+}
+.cartas:hover .c1:hover h3 { 
+    color: black; 
+}
+.cartas:hover .c2:hover h3 { 
+    color: white; 
+}
+.cartas:hover .c3:hover h3 { 
+    color: white; 
+}
+.cartas:hover .c4:hover h3 { 
+    color: black; 
+}
+.cartas:hover .c5:hover h3 { 
+    color: black; 
+}
+.cartas:hover .c1:hover {
+    box-shadow: 0 0 22px var(--f3), 0 0 22px var(--f3);
+    transform: translateX(-160px) translateY(-20px) rotate(-15deg) scale(1.15);
+    opacity: 1;
+    z-index: 10;
+}
+.cartas:hover .c2:hover {
+    box-shadow: 0 0 22px var(--f2), 0 0 22px var(--f2);
+    transform: translateX(-90px) translateY(-20px) rotate(-8deg) scale(1.15);
+    opacity: 1;
+    z-index: 10;
+}
+.cartas:hover .c3:hover {
+    box-shadow: 0 0 22px var(--f1), 0 0 22px var(--f1);
+    transform: translateX(0) translateY(-20px) rotate(0deg) scale(1.15);
+    opacity: 1;
+    z-index: 10;
+}
+.cartas:hover .c4:hover {
+    box-shadow: 0 0 22px var(--f4), 0 0 22px var(--f4);
+    transform: translateX(90px) translateY(-20px) rotate(8deg) scale(1.15);
+    opacity: 1;
+    z-index: 10;
+}
+.cartas:hover .c5:hover {
+    box-shadow: 0 0 22px var(--f5), 0 0 22px var(--f5);
+    transform: translateX(160px) translateY(-20px) rotate(15deg) scale(1.15);
+    opacity: 1;
+    z-index: 10;
+}
+
+.cartas:hover .c1:hover { 
+    animation: colorC1 0.6s ease forwards; 
+}
+.cartas:hover .c2:hover { 
+    animation: colorC2 0.6s ease forwards; 
+}
+.cartas:hover .c3:hover { 
+    animation: colorC3 0.6s ease forwards; 
+}
+.cartas:hover .c4:hover { 
+    animation: colorC4 0.6s ease forwards; 
+}
+.cartas:hover .c5:hover { 
+    animation: colorC5 0.6s ease forwards; 
+}
+@keyframes colorC1 {
+    0%   { background: var(--fondo); }
+    100% { background: var(--f1); }
+}
+@keyframes colorC2 {
+    0%   { background: var(--fondo); }
+    100% { background: var(--f2); }
+}
+@keyframes colorC3 {
+    0%   { background: var(--fondo); }
+    100% { background: var(--f3); }
+}
+@keyframes colorC4 {
+    0%   { background: var(--fondo); }
+    100% { background: var(--f4); }
+}
+@keyframes colorC5 {
+    0%   { background: var(--fondo); }
+    100% { background: var(--f5); }
+}
